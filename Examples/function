@@ -1,0 +1,6 @@
+Example in some random language
+
+functionDefinition z = someFunction(x, y) [
+    w = x * 2 + y + 1;
+    z = w / 2;
+]

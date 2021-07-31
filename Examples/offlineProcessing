@@ -1,0 +1,7 @@
+Example in some random language
+
+function y = reduceGainBy6dB(inputFile x, outputFileName name)
+    xData = readFile(x);
+    yData = xData / 2.0;
+    y = writeFile(yData, name);
+done
