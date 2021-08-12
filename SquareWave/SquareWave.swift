@@ -18,7 +18,7 @@ let inputFormat = AVAudioFormat(commonFormat: outputFormat.commonFormat,
                                 channels: 1,
                                 interleaved: outputFormat.isInterleaved)
 let dur: Float = 1.0
-var synthData = SynthData(nOsc: 10, fc: 100, totalSamples: Int(dur * sampleRate))
+var synthData = SynthData(nOsc: 10, fc: 220, totalSamples: Int(dur * sampleRate))
 
 let srcNode = AVAudioSourceNode { _, _, frameCount, audioBufferList -> OSStatus in
     let ablPointer = UnsafeMutableAudioBufferListPointer(audioBufferList)

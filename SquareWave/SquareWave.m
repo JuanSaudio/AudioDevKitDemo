@@ -1,6 +1,7 @@
 clear
+% Define a sample rate
 fs = 48000;
-fc = 100;
+fc = 220;
 nOsc = 10;
 dur = 1;
 t = linspace(0, dur, dur * fs + 1);

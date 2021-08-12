@@ -4,3 +4,6 @@ functionDefinition z = someFunction(x, y) [
     w = x * 2 + y + 1;
     z = w / 2;
 ]
+
+
+result = someFunction(5, 3)

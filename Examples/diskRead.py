@@ -11,7 +11,7 @@ def playSample(note, velocity):
 
     batch.popLast();
     batch.pushInFront(loadFromDisk(note))
-    catch[0].playWithVelocity(velocity)
+    batch[0].playWithVelocity(velocity)
     return
 
 for i in range(128):

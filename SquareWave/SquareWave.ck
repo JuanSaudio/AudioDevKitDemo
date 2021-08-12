@@ -1,5 +1,6 @@
+/* Define the number of oscillators */
 10 => int numOsc;
-100 => float fc;
+220 => float fc;
 SinOsc osc[numOsc];
 for (0 => int i; i < numOsc; i++) {
     osc[i] => dac;

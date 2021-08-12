@@ -9,6 +9,7 @@
 #define BUF_SIZE 512
 #define SAMPLE_RATE 48000
 
+// Define a structure for the synthesizer
 struct SynthData {
     int nOsc;
     float fc;
@@ -16,6 +17,7 @@ struct SynthData {
     long totalSamples;
 };
 
+// Define an audio callback
 int audioCallback(const void* inBuffer, void* outBuffer,
     unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo,
     PaStreamCallbackFlags statusFlags, void* userData)
@@ -41,19 +43,23 @@ int audioCallback(const void* inBuffer, void* outBuffer,
     return paContinue;
 }
 
+// Main Function
 int main(int argc, char* argv[]) {
-
     float dur = 1.0;
     SynthData synthData;
+    // Define number of oscillators
     synthData.nOsc = 10;
-    synthData.fc = 100;
+    // Define Base Frequency
+    synthData.fc = 220;
     synthData.lastSample = 0;
+    // Pre compute the total number of samples
     synthData.totalSamples = SAMPLE_RATE * dur;
 
     PaStream* stream;
     PaError status;
     PaSampleFormat format = paFloat32 | paNonInterleaved;
 
+    // Initialize Port audio
     status = Pa_Initialize();
     assert(status == paNoError);
     status = Pa_OpenDefaultStream(&stream, 0, 2, format,
@@ -63,6 +69,7 @@ int main(int argc, char* argv[]) {
     status = Pa_StartStream(stream);
     assert(status == paNoError);
     std::string s;
+    // Infinite loop
     while (Pa_IsStreamActive(stream)) {
          std::this_thread::sleep_for(std::chrono::seconds(1));
     }

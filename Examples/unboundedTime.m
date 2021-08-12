@@ -6,7 +6,7 @@ function time = lastTimeAbove36C()
         if currentTemperature > 36
             break
         end
-        pause(0.1)
+        pause(1)
     end
     time = getCurrentTime();
 end
